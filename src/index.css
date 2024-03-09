@@ -1,8 +1,6 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   cursor: default;
@@ -19,16 +17,17 @@ header {
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  height: 20px;
+  height: 70px;
   width: 100%;
   top: 5%;
+  z-index: 1;
 }
 
 header:before{
   content: '';
   background-color: white;
   height: 0.1px;
-  width: 135px;
+  width: 37%;
   position: absolute;
   left: 15%;
   z-index: 1;
@@ -49,17 +48,17 @@ header div{
 }
 
 header a{
-  font-size: 4px;
+  font-size: 15px;
   text-transform: uppercase;
   color: white;
   align-self: start;
-  padding-top: 5%;
-  height: 58%;
+  padding-top: 4%;
+  height: 65%;
   transition: .1s;
 }
 
 header a:hover{
-  border-bottom: solid 1px white;
+  border-bottom: solid 3px white;
   cursor: pointer;
 }
 
@@ -70,9 +69,229 @@ header img{
   background-color: white;
 }
 
-#s1{
-  margin-top: -6%;
+main{
+  
+}
+
+#home{
   background:  
     url('assets/home/background-home-desktop.jpg')
-    no-repeat center / 100% 100%;
+    no-repeat center top / 100% 100%;
+  padding: 20% 10% 10% 10%;
+  color: white;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 1% 25%;
+}
+
+#home h1{
+  order: 1;
+  grid-column: span 2;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin: 0;
+  letter-spacing: 5px;
+}
+
+#home h2{
+  order: 2;
+  margin: 0;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 150px;
+  letter-spacing: 5px;
+}
+
+#home p{
+  order: 4;
+  margin: 0;
+  font-size: 15px;
+  font-weight: 100;
+  line-height: 25px;
+  width: 75%;
+}
+
+#home button{
+  order: 3;
+  grid-row: span 2;
+  width: 300px;
+  height: 300px;
+  border-radius: 200px;
+  text-transform: uppercase;
+  font-size: 40px;
+  border-style: none;
+  margin-top: 35%;
+  text-align: center;
+  transition: .3s;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+#home button:hover{
+  border: solid 2px white;
+  background-color: transparent;
+  color: white;
+}
+
+#destination{
+  background:  
+  url('assets/destination/background-destination-desktop.jpg')
+  no-repeat center top / 100% 100%;
+  padding: 15% 10% 10% 10%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+#destination h2, #crew h2{
+  font-size: 20px;
+  font-weight: 100;
+  text-transform: uppercase;
+  word-spacing: 3px;
+  letter-spacing: 5px;
+}
+
+#destination h2 span, #crew h2 span{
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 600;
+}
+
+.planetsPanel{
+  margin-top: 5%;
+  width: 40%;
+  align-self: end;
+}
+
+.planetsNav{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: 25px;
+}
+
+.planetsNav a{
+  font-size: 15px;
+  text-transform: uppercase;
+  margin-right: 5%;
+  font-weight: 100;
+  transition: .1s;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.planetsNav a:hover{
+  color: white;
+  border-bottom: solid 1px white;
+}
+
+.planet{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.planet h3{
+  grid-column: span 2;
+  margin: 0;
+  font-size: 100px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.planet p{
+  grid-column: span 2;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 15px;
+  line-height: 25px;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 15%;
+  height: 100px;
+}
+
+.planet h4{
+  margin: 3% 0 0 0;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.planet h5{
+  margin: 2% 0 0 0;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-weight: 100;
+}
+
+#crew{
+  background:  
+  url('assets/crew/background-crew-desktop.jpg')
+  no-repeat center top / 100% 100%;
+  padding: 15% 10% 0 10%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.crewPanel{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.crewItem{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.crewItem h3{
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 30px;
+  font-weight: 100;
+  text-transform: uppercase;
+  height: 35px;
+  margin: 20% 0 0 0;
+}
+
+.crewItem h4{
+  color: white;
+  font-size: 55px;
+  font-weight: 100;
+  text-transform: uppercase;
+  height: 65px;
+  margin: 0;
+}
+
+.crewItem p{
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 15px;
+  line-height: 25px;
+  height: 100px;
+  margin: 0 0 50% 0;
+}
+
+.crewItem img{
+  grid-row: span 3;
+  height: 700px;
+}
+
+.crewNav{
+  position: absolute;
+  bottom: 0;
+  width: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.crewNav a{
+  font-size: 150px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.5);
+  transition: .1s;
+}
+
+.crewNav a:hover{
+ color: white;
 }

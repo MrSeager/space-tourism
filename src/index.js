@@ -1,28 +1,32 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import LogoImg from './assets/shared/logo.svg';
+import ComImg from './assets/crew/image-douglas-hurley.webp';
+import EngImg from './assets/crew/image-anousheh-ansari.webp';
+import PilImg from './assets/crew/image-victor-glover.webp';
+import SpeImg from './assets/crew/image-mark-shuttleworth.webp';
 
-const NavBar = () => {
+const NavBar = ({setActivePage}) => {
   return (
     <header>
-      <img src={LogoImg} />
+      <img src={LogoImg} alt='logo' />
       <div>
-        <a><strong>00</strong> Home</a>
-        <a><strong>01</strong> Destination</a>
-        <a><strong>02</strong> Crew</a>
-        <a><strong>03</strong> Technology</a>
+        <a onClick={() => setActivePage('Home')}><strong>00</strong> Home</a>
+        <a onClick={() => setActivePage('Destination')}><strong>01</strong> Destination</a>
+        <a onClick={() => setActivePage('Crew')}><strong>02</strong> Crew</a>
+        <a onClick={() => setActivePage('Technology')}><strong>03</strong> Technology</a>
       </div>
     </header>
   );
 };
 
-const Sect1 = () => {
+const Home = () => {
   return (
-    <section id="s1">
+    <section id="home">
       <h1>So, you want to travel to</h1>
       <h2>Space</h2>
       <p>Let’s face it; if you want to go to space, you might as well genuinely go to 
@@ -33,15 +37,188 @@ const Sect1 = () => {
   );
 };
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <NavBar />
-    <Sect1 />
-  </React.StrictMode>
-);
+const Destination = () => {
+  const [activePlanet, setActivePlanet] = useState('Moon');
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+  return (
+    <section id='destination'>
+      <h2><span>01</span> Pick your destination</h2>
+      <div className='planetsPanel'>
+        <div className='planetsNav'>
+          <a onClick={() => setActivePlanet('Moon')}>Moon</a>
+          <a onClick={() => setActivePlanet('Mars')}>Mars</a>
+          <a onClick={() => setActivePlanet('Europa')}>Europa</a>
+          <a onClick={() => setActivePlanet('Titan')}>Titan</a>
+        </div>
+        {activePlanet === 'Moon' && <Moon />}
+        {activePlanet === 'Mars' && <Mars />}
+        {activePlanet === 'Europa' && <Europa />}
+        {activePlanet === 'Titan' && <Titan />}
+      </div>
+    </section>
+  );
+};
+
+const Moon = () => {
+  return(
+    <div className='planet'>
+      <h3>Moon</h3>
+      <p>See our planet as you’ve never seen it before. A perfect relaxing trip away to help 
+      regain perspective and come back refreshed. While you’re there, take in some history 
+      by visiting the Luna 2 and Apollo 11 landing sites.</p>
+      <h4>Avg. distance</h4>
+      <h4>Est. travel time</h4>
+      <h5>384,400 km</h5>
+      <h5>3 days</h5>
+    </div>
+  );
+};
+
+const Mars = () => {
+  return(
+    <div className='planet'>
+      <h3>Mars</h3>
+      <p>Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, 
+      the tallest planetary mountain in our solar system. It’s two and a half times 
+      the size of Everest!</p>
+      <h4>Avg. distance</h4>
+      <h4>Est. travel time</h4>
+      <h5>225 mil. km</h5>
+      <h5>9 months</h5>
+    </div>
+  );
+};
+
+const Europa = () => {
+  return(
+    <div className='planet'>
+      <h3>Europa</h3>
+      <p>The smallest of the four Galilean moons orbiting Jupiter, Europa is a 
+      winter lover’s dream. With an icy surface, it’s perfect for a bit of 
+      ice skating, curling, hockey, or simple relaxation in your snug 
+      wintery cabin.</p>
+      <h4>Avg. distance</h4>
+      <h4>Est. travel time</h4>
+      <h5>628 mil. km</h5>
+      <h5>3 years</h5>
+    </div>
+  );
+};
+
+const Titan = () => {
+  return(
+    <div className='planet'>
+      <h3>Titan</h3>
+      <p>The only moon known to have a dense atmosphere other than Earth, Titan 
+      is a home away from home (just a few hundred degrees colder!). As a 
+      bonus, you get striking views of the Rings of Saturn.</p>
+      <h4>Avg. distance</h4>
+      <h4>Est. travel time</h4>
+      <h5>1.6 bil. km</h5>
+      <h5>7 years</h5>
+    </div>
+  );
+};
+
+const Crew = () => {
+  const [activeCrewMember, setActiveCrewMember] = useState('Commander');
+
+  return (
+    <section id='crew'>
+      <h2><span>02</span> Meet your crew</h2>
+      <div className='crewPanel'>
+        {activeCrewMember === 'Commander' && <Commander />}
+        {activeCrewMember === 'Engineer' && <Engineer />}
+        {activeCrewMember === 'Pilot' && <Pilot />}
+        {activeCrewMember === 'Specialist' && <Specialist />}
+        <div className='crewNav'>
+          <a onClick={() => setActiveCrewMember('Commander')}>&middot;</a>
+          <a onClick={() => setActiveCrewMember('Engineer')}>&middot;</a>
+          <a onClick={() => setActiveCrewMember('Pilot')}>&middot;</a>
+          <a onClick={() => setActiveCrewMember('Specialist')}>&middot;</a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Commander = () => {
+  return (
+    <div className='crewItem'>
+      <h3>Commander</h3>
+      <img src={ComImg} alt='crewImg' />
+      <h4>Douglas Hurley</h4>
+      <p>Douglas Gerald Hurley is an American engineer, former Marine Corps pilot 
+      and former NASA astronaut. He launched into space for the third time as 
+      commander of Crew Dragon Demo-2.</p>
+    </div>
+  );
+};
+
+const Engineer = () => {
+  return (
+    <div className='crewItem'>
+      <h3>Flight Engineer</h3>
+      <img src={EngImg} alt='crewImg' />
+      <h4>Anousheh Ansari</h4>
+      <p>Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. 
+      Ansari was the fourth self-funded space tourist, the first self-funded woman to 
+      fly to the ISS, and the first Iranian in space.</p>
+    </div>
+  );
+};
+
+const Pilot = () => {
+  return (
+    <div className='crewItem'>
+      <h3>Pilot</h3>
+      <img src={PilImg} alt='crewImg' />
+      <h4>Victor Glover</h4>
+      <p>Pilot on the first operational flight of the SpaceX Crew Dragon to the 
+      International Space Station. Glover is a commander in the U.S. Navy where 
+      he pilots an F/A-18.He was a crew member of Expedition 64, and served as a 
+      station systems flight engineer.</p>
+    </div>
+  );
+};
+
+const Specialist = () => {
+  return (
+    <div className='crewItem'>
+      <h3>Pilot</h3>
+      <img src={SpeImg} alt='crewImg' />
+      <h4>Mark Shuttleworth</h4>
+      <p>Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind 
+      the Linux-based Ubuntu operating system. Shuttleworth became the first South 
+      African to travel to space as a space tourist.</p>
+    </div>
+  );
+};
+
+const Technology = () => {
+  return (
+    <section id='technology'>
+
+    </section>
+  );
+};
+
+const MainSite = () => {
+  const [activePage, setActivePage] = useState('Home');
+
+  return(
+    <React.StrictMode>
+      <NavBar setActivePage={setActivePage}/>
+      <main>
+        {activePage === 'Home' && <Home />}
+        {activePage === 'Destination' && <Destination />}
+        {activePage === 'Crew' && <Crew />}
+        {activePage === 'Technology' && <Technology />}
+      </main>
+    </React.StrictMode>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<MainSite />);
 reportWebVitals();
