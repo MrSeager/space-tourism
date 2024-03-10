@@ -51,10 +51,11 @@ header a{
   font-size: 15px;
   text-transform: uppercase;
   color: white;
-  align-self: start;
-  padding-top: 4%;
-  height: 65%;
-  transition: .1s;
+  align-self: center;
+  transition: .5s;
+  line-height: 70px;
+  border-top: solid 3px transparent;
+  border-bottom: solid 3px transparent;
 }
 
 header a:hover{
@@ -143,7 +144,7 @@ main{
   flex-direction: column;
 }
 
-#destination h2, #crew h2{
+#destination h2, #crew h2, #technology h2{
   font-size: 20px;
   font-weight: 100;
   text-transform: uppercase;
@@ -151,7 +152,7 @@ main{
   letter-spacing: 5px;
 }
 
-#destination h2 span, #crew h2 span{
+#destination h2 span, #crew h2 span, #technology h2 span{
   color: rgba(255, 255, 255, 0.5);
   font-weight: 600;
 }
@@ -294,4 +295,83 @@ main{
 
 .crewNav a:hover{
  color: white;
+}
+
+#technology{
+  background:  
+  url('assets/technology/background-technology-desktop.jpg')
+  no-repeat center top / 100% 100%;
+  padding: 15% 0 5% 10%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.techPanel{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+
+.techNav{
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  align-items: center;
+  margin-right: 5%;
+}
+
+.techNav button{
+  background-color: transparent;
+  color: white;
+  font-weight: 400;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 25px;
+  width: 75px;
+  height: 75px;
+  border: solid 1px white;
+  border-radius: 50px;
+  margin: 20% 0;
+  transition: .5s;
+}
+
+.techNav button:hover{
+  background-color: white;
+  color: black;
+}
+
+.techItem{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 5%;
+}
+
+.techItem h3{
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 200;
+  letter-spacing: 3px;
+  margin: 20% 0 0 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.techItem h4{
+  font-size: 65px;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 3px;
+  margin: -15% 0 0 0;
+}
+
+.techItem p{
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 15px;
+  line-height: 25px;
+  margin: -10% 0 10% 0;
+}
+
+.techItem img{
+  grid-row: span 3;
+  justify-self: end;
 }
