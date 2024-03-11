@@ -33,7 +33,7 @@ header:before{
   z-index: 1;
 }
 
-header div{
+#DeskNav{
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -68,10 +68,6 @@ header img{
   margin-left: 5%;
   border-radius: 50px;
   background-color: white;
-}
-
-main{
-  
 }
 
 #home{
@@ -136,8 +132,8 @@ main{
 
 #destination{
   background:  
-  url('assets/destination/background-destination-desktop.jpg')
-  no-repeat center top / 100% 100%;
+    url('assets/destination/background-destination-desktop.jpg')
+    no-repeat center top / 100% 100%;
   padding: 15% 10% 10% 10%;
   color: white;
   display: flex;
@@ -159,21 +155,21 @@ main{
 
 .planetsPanel{
   margin-top: 5%;
-  width: 40%;
-  align-self: end;
+  width: 100%;
 }
 
 .planetsNav{
-  width: 100%;
+  width: 40%;
   display: flex;
   flex-direction: row;
   height: 25px;
+  margin-left: 60.5%;
 }
 
 .planetsNav a{
   font-size: 15px;
   text-transform: uppercase;
-  margin-right: 5%;
+  margin-right: 2.5%;
   font-weight: 100;
   transition: .1s;
   text-align: center;
@@ -187,7 +183,11 @@ main{
 
 .planet{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 3fr 1fr 1fr;
+}
+
+.planet img{
+  grid-row: span 4;
 }
 
 .planet h3{
@@ -225,12 +225,16 @@ main{
 
 #crew{
   background:  
-  url('assets/crew/background-crew-desktop.jpg')
-  no-repeat center top / 100% 100%;
+    url('assets/crew/background-crew-desktop.jpg')
+    no-repeat center top / 100% 100%;
   padding: 15% 10% 0 10%;
   color: white;
   display: flex;
   flex-direction: column;
+}
+
+.imgMob{
+  display: none;
 }
 
 .crewPanel{
@@ -275,6 +279,7 @@ main{
 .crewItem img{
   grid-row: span 3;
   height: 700px;
+  align-self: end;
 }
 
 .crewNav{
@@ -374,4 +379,255 @@ main{
 .techItem img{
   grid-row: span 3;
   justify-self: end;
+}
+
+@media (min-width: 1980px){
+  body, header{
+    width: 1980px;
+  }
+}
+
+@media (max-width: 1080px){
+  body, header{
+    width: 1080px;
+  }
+
+  header{
+    position: absolute;
+    top: 0;
+    height: 125px;
+  }
+
+  header:before{
+    display: none;
+  }
+
+  #DeskNav{
+    width: 50%;
+  }
+
+  header a{
+    line-height: 125px;
+    font-size: 20px;
+  }
+
+  header a strong{
+    display: none;
+  }
+
+  #home{
+    background:  
+      url('assets/home/background-home-tablet.jpg')
+      no-repeat center top / 100% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #home h2{
+    font-size: 200px;
+    margin-top: -2.5%;
+  }
+
+  #home p{
+    width: 65%;
+    font-size: 20px;
+    line-height: 35px;
+  }
+
+  #home button{
+    order: 4;
+    margin-top: 15%;
+  }
+
+  #destination{
+    background:  
+      url('assets/destination/background-destination-tablet.jpg')
+      no-repeat center top / 100% 100%;
+    position: relative;
+    padding: 15% 5% 10% 5%;
+  }
+
+  #destination h2, #crew h2, #technology h2{
+    font-size: 25px;
+  }
+
+  .planetsNav{
+    position: absolute;
+    justify-content: space-around;
+    margin: 0;
+    right: 25%;
+    top: 55%;
+    height: 35px;
+    width: 50%;
+  }
+
+  .planetsNav a{
+    font-size: 25px;
+    color: white;
+  }
+
+  .planet{
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+  }
+
+  .planet img{
+    grid-column: span 2;
+    margin-left: 25%;
+    width: 50%;
+  }
+
+  .planet h3{
+    margin-top: 10%;
+    font-size: 150px;
+  }
+
+  .planet p{
+    padding: 0 10% 10% 10%;
+    font-size: 25px;
+    color: white;
+    line-height: 35px;
+    border-bottom: none;
+  }
+
+  .planet h4{
+    color: white;
+    font-size: 25px;
+  }
+
+  .planet h5{
+    font-size: 45px;
+    font-weight: 400;
+  }
+
+  #crew{
+    background:  
+      url('assets/crew/background-crew-tablet.jpg')
+      no-repeat center top / 100% 100%;
+    padding: 15% 5% 0 5%;
+  }
+
+  .crewItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .crewItem h3{
+    order: 1;
+    font-size: 50px;
+    height: 70px;
+    margin-top: 5%;
+    color: white;
+  }
+
+  .crewItem h4{
+    order: 2;
+    font-size: 75px;
+    height: 105px;
+    margin-top: 0;
+    font-weight: 400;
+  }
+
+  .crewItem p{
+    order: 3;
+    margin-bottom: 15%;
+    margin-top: 3%;
+    font-size: 25px;
+    color: white;
+    line-height: 35px;
+    padding: 0 10% 0 10%;
+  }
+
+  .crewItem img{
+    order: 4;
+    align-self: center;
+  }
+
+  .crewNav{
+    right: 35%;
+    width: 30%;
+    bottom: 63%;
+    height: 50px;
+  }
+
+  .crewNav a{
+    font-size: 250px;
+    line-height: 0;
+  }
+
+  #technology{
+    background:  
+      url('assets/technology/background-technology-tablet.jpg')
+      no-repeat center top / 100% 100%;
+    padding: 15% 0 10% 0;
+    position: relative;
+  }
+
+  #technology h2{
+    padding-left: 5%;
+    margin-bottom: 10%;
+  }
+
+  .imgDesk{
+    display: none;
+  }
+
+  .techNav{
+    flex-direction: row;
+    width: 35%;
+    justify-content: space-between;
+    position: absolute;
+    top: 49%;
+    margin: 0;
+  }
+
+  .techNav button{
+    width: 100px;
+    height: 100px;
+  }
+
+  .techPanel{
+    flex-direction: column;
+  }
+
+  .techItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .imgMob{
+    display: block;
+    order: 1;
+    width: 100%;
+    margin-bottom: 20%;
+  }
+
+  .techItem h3{
+    color: white;
+    font-size: 25px;
+    order: 2;
+    margin: 0;
+  }
+
+  .techItem h4{
+    order: 3;
+    font-size: 70px;
+    margin: 0 0 3% 0;
+  }
+
+  .techItem p{
+    order: 4;
+    margin: 0;
+    width: 70%;
+    font-size: 25px;
+    line-height: 40px;
+    height: 250px;
+    color: white;
+  }
 }

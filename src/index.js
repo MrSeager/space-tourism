@@ -5,19 +5,26 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import LogoImg from './assets/shared/logo.svg';
+import EurImg from './assets/destination/image-europa.webp';
+import MarsImg from './assets/destination/image-mars.webp';
+import MoonImg from './assets/destination/image-moon.webp';
+import TitImg from './assets/destination/image-titan.webp';
 import ComImg from './assets/crew/image-douglas-hurley.webp';
 import EngImg from './assets/crew/image-anousheh-ansari.webp';
 import PilImg from './assets/crew/image-victor-glover.webp';
 import SpeImg from './assets/crew/image-mark-shuttleworth.webp';
 import VehImg from './assets/technology/image-launch-vehicle-portrait.jpg';
+import VehImgMob from './assets/technology/image-launch-vehicle-landscape.jpg';
 import CapImg from './assets/technology/image-space-capsule-portrait.jpg';
+import CapImgMob from './assets/technology/image-space-capsule-landscape.jpg';
 import SpaImg from './assets/technology/image-spaceport-portrait.jpg';
+import SpaImgMob from './assets/technology/image-spaceport-landscape.jpg';
 
 const NavBar = ({setActivePage}) => {
   return (
     <header>
       <img src={LogoImg} alt='logo' />
-      <div>
+      <div id="DeskNav">
         <a onClick={() => setActivePage('Home')}><strong>00</strong> Home</a>
         <a onClick={() => setActivePage('Destination')}><strong>01</strong> Destination</a>
         <a onClick={() => setActivePage('Crew')}><strong>02</strong> Crew</a>
@@ -65,6 +72,7 @@ const Destination = () => {
 const Moon = () => {
   return(
     <div className='planet'>
+      <img src={MoonImg} alt="PlanetImg" />
       <h3>Moon</h3>
       <p>See our planet as you’ve never seen it before. A perfect relaxing trip away to help 
       regain perspective and come back refreshed. While you’re there, take in some history 
@@ -80,6 +88,7 @@ const Moon = () => {
 const Mars = () => {
   return(
     <div className='planet'>
+      <img src={MarsImg} alt="PlanetImg" />
       <h3>Mars</h3>
       <p>Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, 
       the tallest planetary mountain in our solar system. It’s two and a half times 
@@ -95,6 +104,7 @@ const Mars = () => {
 const Europa = () => {
   return(
     <div className='planet'>
+      <img src={EurImg} alt="PlanetImg" />
       <h3>Europa</h3>
       <p>The smallest of the four Galilean moons orbiting Jupiter, Europa is a 
       winter lover’s dream. With an icy surface, it’s perfect for a bit of 
@@ -111,6 +121,7 @@ const Europa = () => {
 const Titan = () => {
   return(
     <div className='planet'>
+      <img src={TitImg} alt="PlanetImg" />
       <h3>Titan</h3>
       <p>The only moon known to have a dense atmosphere other than Earth, Titan 
       is a home away from home (just a few hundred degrees colder!). As a 
@@ -222,7 +233,8 @@ const Vehicle = () => {
   return (
     <div className='techItem'>
       <h3>The terminology...</h3>
-      <img src={VehImg} alt="techImg" />
+      <img className='imgDesk' src={VehImg} alt="techImg" />
+      <img className='imgMob' src={VehImgMob} alt="techImg" />
       <h4>Launch vehicle</h4>
       <p>A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a 
       payload from Earth's surface to space, usually to Earth orbit or beyond. Our 
@@ -236,7 +248,8 @@ const Capsule = () => {
   return (
     <div className='techItem'>
       <h3>The terminology...</h3>
-      <img src={CapImg} alt="techImg" />
+      <img className='imgDesk' src={CapImg} alt="techImg" />
+      <img className='imgMob' src={CapImgMob} alt="techImg" />
       <h4>Space capsule</h4>
       <p>A space capsule is an often-crewed spacecraft that uses a blunt-body reentry 
       capsule to reenter the Earth's atmosphere without wings. Our capsule is where 
@@ -250,7 +263,8 @@ const Spaceport = () => {
   return (
     <div className='techItem'>
       <h3>The terminology...</h3>
-      <img src={SpaImg} alt="techImg" />
+      <img className='imgDesk' src={SpaImg} alt="techImg" />
+      <img className='imgMob' src={SpaImgMob} alt="techImg" />
       <h4>Spaceport</h4>
       <p>A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, 
       by analogy to the seaport for ships or airport for aircraft. Based in the 
