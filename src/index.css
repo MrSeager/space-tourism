@@ -47,7 +47,7 @@ header:before{
       backdrop-filter: blur(3px);
 }
 
-header a{
+#DeskNav a{
   font-size: 15px;
   text-transform: uppercase;
   color: white;
@@ -58,7 +58,7 @@ header a{
   border-bottom: solid 3px transparent;
 }
 
-header a:hover{
+#DeskNav a:hover{
   border-bottom: solid 3px white;
   cursor: pointer;
 }
@@ -70,6 +70,10 @@ header img{
   background-color: white;
 }
 
+#MobNavPanel{
+  display: none;
+}
+
 #home{
   background:  
     url('assets/home/background-home-desktop.jpg')
@@ -79,6 +83,10 @@ header img{
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 1% 25%;
+}
+
+#MobNav{
+  display: none;
 }
 
 #home h1{
@@ -366,14 +374,14 @@ header img{
   text-transform: uppercase;
   font-weight: 400;
   letter-spacing: 3px;
-  margin: -15% 0 0 0;
+  margin: 0 0 0 0;
 }
 
 .techItem p{
   color: rgba(255, 255, 255, 0.5);
   font-size: 15px;
   line-height: 25px;
-  margin: -10% 0 10% 0;
+  margin: 0 0 30% 0;
 }
 
 .techItem img{
@@ -385,11 +393,19 @@ header img{
   body, header{
     width: 1980px;
   }
+
+  #MobNavPanel{
+    display: none;
+  }
 }
 
 @media (max-width: 1080px){
   body, header{
     width: 1080px;
+  }
+
+  #MobNavPanel{
+    display: none;
   }
 
   header{
@@ -406,12 +422,12 @@ header img{
     width: 50%;
   }
 
-  header a{
+  #DeskNav a{
     line-height: 125px;
     font-size: 20px;
   }
 
-  header a strong{
+  #DeskNav a strong{
     display: none;
   }
 
@@ -629,5 +645,253 @@ header img{
     line-height: 40px;
     height: 250px;
     color: white;
+  }
+}
+
+@media (max-width: 480px){
+  body, header{
+    width: 480px;
+  }
+
+  #DeskNav{
+    display: none;
+  }
+
+  #MobNav{
+    display: block;
+    height: 75px;
+    width: 75px;
+    border-radius: 50px;
+    background-color: transparent;
+    border-style: none;
+    color: white;
+    font-size: 50px;
+    margin-right: 2.5%;
+  }
+
+  #home{
+    background:  
+      url('assets/home/background-home-mobile.jpg')
+      no-repeat center top / 100% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40% 5% 10% 5%;
+  }
+
+  #home h2{
+    font-size: 140px;
+    margin: 0;
+  }
+
+  #home p{
+    width: 90%;
+    font-size: 15px;
+    line-height: 30px;
+  }
+
+  #home button{
+    margin-top: 25%;
+  }
+
+  #MobNavPanel{
+    flex-direction: column;
+    background-color: rgba(89, 88, 88, 0.397); /* Very transparent white */
+      -webkit-backdrop-filter: blur(2em); /* Apply blur effect */
+      backdrop-filter: blur(3px);
+    position: fixed;
+    right: 0;
+    top: 0;
+    align-items: start;
+    width: 65%;
+    height: 100%;
+  }
+
+  #MobNavPanel a{
+    color: white;
+    margin-left: 5%;
+    margin-bottom: 10%;
+    text-transform: uppercase;
+  }
+
+  #MobNavPanel button{
+    align-self: end;
+    margin-top: 5%;
+    margin-right: 5%;
+    color: white;
+    background-color: transparent;
+    border-style: none;
+    font-size: 25px;
+    margin-bottom: 25%;
+  }
+
+  #destination{
+    background:  
+      url('assets/destination/background-destination-mobile.jpg')
+      no-repeat center top / 100% 100%;
+    padding: 30% 5% 10% 5%;
+  }
+
+  #destination h2, #crew h2, #technology h2{
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .planetsNav{
+    right: 15%;
+    top: 42%;
+    height: 35px;
+    width: 70%;
+  }
+
+  .planetsNav a{
+    font-size: 20px;
+    color: white;
+  }
+
+  .planet{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .planet img{
+    order: 1;
+  }
+
+  .planet h3{
+    order: 2;
+    margin-top: 10%;
+    font-size: 100px;
+  }
+
+  .planet p{
+    order: 3;
+    font-size: 15px;
+    line-height: 30px;
+    margin-bottom: 15%;
+  }
+
+  .plh4_1{
+    order: 4;
+  }
+
+  .plh5_1{
+    order: 5;
+  }
+
+  .plh4_2{
+    order: 6;
+  }
+
+  .plh5_2{
+    order: 7;
+  }
+
+  .planet h4{
+    color: white;
+    font-size: 20px;
+  }
+
+  .planet h5{
+    font-size: 40px;
+    font-weight: 400;
+  }
+
+  #crew{
+    background:  
+      url('assets/crew/background-crew-mobile.jpg')
+      no-repeat center top / 100% 100%;
+    padding: 30% 5% 0 5%;
+  }
+
+  .crewItem{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .crewItem h3{
+    order: 2;
+    font-size: 35px;
+    height: 40px;
+    margin-top: 20%;
+    color: white;
+  }
+
+  .crewItem h4{
+    order: 3;
+    font-size: 40px;
+    height: 50px;
+  }
+
+  .crewItem p{
+    order: 4;
+    margin-bottom: 15%;
+    margin-top: 5%;
+    font-size: 20px;
+    color: white;
+    line-height: 35px;
+    padding: 0 5% 0 5%;
+    height: 250px;
+  }
+
+  .crewItem img{
+    order: 1;
+    height: 350px;
+  }
+
+  .crewNav{
+    right: 25%;
+    width: 50%;
+    bottom: 51%;
+    height: 50px;
+  }
+
+  .crewNav a{
+    font-size: 250px;
+    line-height: 0;
+  }
+
+  #technology{
+    background:  
+      url('assets/technology/background-technology-mobile.jpg')
+      no-repeat center top / 100% 100%;
+    padding: 30% 0 10% 0;
+  }
+
+  .imgDesk{
+    display: none;
+  }
+
+  .techNav{
+    flex-direction: row;
+    width: 50%;
+    justify-content: space-between;
+    position: absolute;
+    top: 42%;
+    margin: 0;
+  }
+
+  .techNav button{
+    width: 70px;
+    height: 70px;
+  }
+
+  .techItem h3{
+    font-size: 20px;
+    margin-top: 10%;
+  }
+
+  .techItem h4{
+    font-size: 40px;
+  }
+
+  .techItem p{
+    margin: 0;
+    width: 90%;
+    font-size: 20px;
+    line-height: 35px;
   }
 }

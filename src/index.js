@@ -21,6 +21,18 @@ import SpaImg from './assets/technology/image-spaceport-portrait.jpg';
 import SpaImgMob from './assets/technology/image-spaceport-landscape.jpg';
 
 const NavBar = ({setActivePage}) => {
+  const toggleMenu = () => {
+    // Get the #DeskNav element
+    const deskNav = document.getElementById('MobNavPanel');
+
+    // Toggle the display property
+    if (deskNav.style.display === 'none') {
+      deskNav.style.display = 'flex'; // Show the menu
+    } else {
+      deskNav.style.display = 'none'; // Hide the menu
+    };
+  };
+
   return (
     <header>
       <img src={LogoImg} alt='logo' />
@@ -30,6 +42,14 @@ const NavBar = ({setActivePage}) => {
         <a onClick={() => setActivePage('Crew')}><strong>02</strong> Crew</a>
         <a onClick={() => setActivePage('Technology')}><strong>03</strong> Technology</a>
       </div>
+      <div id="MobNavPanel">
+        <button onClick={toggleMenu}>✖</button>
+        <a onClick={() => setActivePage('Home')}><strong>00</strong> Home</a>
+        <a onClick={() => setActivePage('Destination')}><strong>01</strong> Destination</a>
+        <a onClick={() => setActivePage('Crew')}><strong>02</strong> Crew</a>
+        <a onClick={() => setActivePage('Technology')}><strong>03</strong> Technology</a>
+      </div>
+      <button id="MobNav" onClick={toggleMenu}>☰</button>
     </header>
   );
 };
@@ -77,10 +97,10 @@ const Moon = () => {
       <p>See our planet as you’ve never seen it before. A perfect relaxing trip away to help 
       regain perspective and come back refreshed. While you’re there, take in some history 
       by visiting the Luna 2 and Apollo 11 landing sites.</p>
-      <h4>Avg. distance</h4>
-      <h4>Est. travel time</h4>
-      <h5>384,400 km</h5>
-      <h5>3 days</h5>
+      <h4 className='plh4_1'>Avg. distance</h4>
+      <h4 className='plh4_2'>Est. travel time</h4>
+      <h5 className='plh5_1'>384,400 km</h5>
+      <h5 className='plh5_2'>3 days</h5>
     </div>
   );
 };
@@ -93,10 +113,10 @@ const Mars = () => {
       <p>Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, 
       the tallest planetary mountain in our solar system. It’s two and a half times 
       the size of Everest!</p>
-      <h4>Avg. distance</h4>
-      <h4>Est. travel time</h4>
-      <h5>225 mil. km</h5>
-      <h5>9 months</h5>
+      <h4 className='plh4_1'>Avg. distance</h4>
+      <h4 className='plh4_2'>Est. travel time</h4>
+      <h5 className='plh5_1'>225 mil. km</h5>
+      <h5 className='plh5_2'>9 months</h5>
     </div>
   );
 };
@@ -110,10 +130,10 @@ const Europa = () => {
       winter lover’s dream. With an icy surface, it’s perfect for a bit of 
       ice skating, curling, hockey, or simple relaxation in your snug 
       wintery cabin.</p>
-      <h4>Avg. distance</h4>
-      <h4>Est. travel time</h4>
-      <h5>628 mil. km</h5>
-      <h5>3 years</h5>
+      <h4 className='plh4_1'>Avg. distance</h4>
+      <h4 className='plh4_2'>Est. travel time</h4>
+      <h5 className='plh5_1'>628 mil. km</h5>
+      <h5 className='plh5_2'>3 years</h5>
     </div>
   );
 };
@@ -126,10 +146,10 @@ const Titan = () => {
       <p>The only moon known to have a dense atmosphere other than Earth, Titan 
       is a home away from home (just a few hundred degrees colder!). As a 
       bonus, you get striking views of the Rings of Saturn.</p>
-      <h4>Avg. distance</h4>
-      <h4>Est. travel time</h4>
-      <h5>1.6 bil. km</h5>
-      <h5>7 years</h5>
+      <h4 className='plh4_1'>Avg. distance</h4>
+      <h4 className='plh4_2'>Est. travel time</h4>
+      <h5 className='plh5_1'>1.6 bil. km</h5>
+      <h5 className='plh5_2'>7 years</h5>
     </div>
   );
 };
